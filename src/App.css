@@ -2,7 +2,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100vw - 5px);
+    width: calc(100vw - 2px);
     position: fixed;
     border: solid;
     padding: 5px 0px;
