@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 5px);
+    position: fixed;
+    border: solid;
+    padding: 5px 0px;
+}
+
+.headerItem{
+    color: white;
+    background-color: rgb(5, 5, 19);
+    margin: 0px 5px;
+    padding: 4px 10px;
+
+    border: 0;
+    border-radius: 10px;
+}
+
+body{
+    margin: 0;
+}
