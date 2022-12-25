@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function App1irwyr(){
-    const [input, setInput] = useState();
+    const [input, setInput] = useState("yo");
     return(
         <>
             <input placeholder="write something here" type="text" onChange={(e) =>{setInput(e.target.value)}}/>
