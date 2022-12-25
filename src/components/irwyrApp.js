@@ -6,7 +6,7 @@ function App1irwyr(){
         <>
             <input placeholder="write something here" type="text" onChange={(e) =>{setInput(e.target.value)}}/>
             <h1 > 
-                {input}
+                {input.length < 10 ? input : "you are gay"}
             </h1>
         </>
     );
