@@ -1,11 +1,12 @@
 import './App.css';
-import Header from './components/header';
+
+import App1irwyr from './components/irwyrApp';
+
 
 function App() {
   return (
     <div className="App">
-      <Header/> 
-      
+      <App1irwyr/>
     </div>
   );
 }
