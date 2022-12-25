@@ -1,4 +1,4 @@
-import './App.css';
+import './index.css';
 
 import App1irwyr from './components/irwyrApp';
 
