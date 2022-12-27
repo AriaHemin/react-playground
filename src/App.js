@@ -1,47 +1,61 @@
 import './index.css';
-import Character from './components/character';
-import { useState } from 'react';
+import Task from "./components/taskComp"
+import { useState } from "react";
+
+function App(props) {
+  const [taskTitle, setTitle] = useState()
+
+  const [todos , setTodos] = useState([
+    {
+        task : "add todo tasks",
+        key : 0
+    },
+    {
+        task : "get some milk",
+        key : 1
+    },
+    {
+        task : "some more give me some more milk",
+        key : 2
+    }])
 
 
-function App() {
-  const [characters, setCharacter] = useState(
-    [
-      {
-        name: "batman", 
-        power: "really rich", 
-        img : "https://images.pexels.com/photos/11791435/pexels-photo-11791435.jpeg" 
-      },
-      {
-        name: "robin", 
-        power: "athletic", 
-        img : "https://images.pexels.com/photos/10228068/pexels-photo-10228068.jpeg" 
-      },
-      {
-        name: "bugs bunny", 
-        power: "comic", 
-        img : "https://images.pexels.com/photos/4588056/pexels-photo-4588056.jpeg" 
-      },
-      {
-        name: "spiderman", 
-        power: "spider power", 
-        img : "https://images.pexels.com/photos/8421963/pexels-photo-8421963.jpeg" 
-      }
-    ]
-  );
+  function addTask(taskTitle ){
+      let newID =  Math.random() * 100
+      let newTask = {
+          task: taskTitle,
+          key: newID
+        }
+      setTodos([...todos, newTask])
+        console.log(todos)
+    }
   return (
     <div className="App">
       <div className='flex flex-wrap justify-center '>
-        {characters.map((character) => {
-          return(
-          <Character 
-            name={character.name} 
-            power={character.power} 
-            img={character.img} 
-          />)
-        })}
+        <div className="flex flex-col">
+        <div>
+            {
+            todos.map((todo)=>{ 
+
+                return( 
+                <Task 
+                    todo={todo.task} 
+                    key={todo.key}/>
+            );})}
+        </div>   
+        <div>
+            <span>
+                <input className='p-1' onChange={(e)=>{setTitle(e.target.value) ;console.log(taskTitle , e.target.value)}} />
+                <button onClick={()=>{
+                    addTask(taskTitle)
+                    
+                }}  > add task </button>
+            </span>
+            
+        </div>     
+        </div>
       </div>
     </div>
-  );
-}
+  );}
 
 export default App;
