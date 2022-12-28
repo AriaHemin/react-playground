@@ -28,8 +28,8 @@ function TodoApp(){
         setTodos([...todos, newTask])
     }
     return (
-    <div className="App">
-      <div className='flex flex-wrap justify-center '>
+    
+    <div className='flex flex-wrap justify-center '>
         <div className="flex flex-col">
         <div>
             {
@@ -52,8 +52,8 @@ function TodoApp(){
             
         </div>     
         </div>
+        <a href="/#/react-playground">home</a>
       </div>
-    </div>
     );
 
 }

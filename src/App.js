@@ -7,7 +7,7 @@ import {BrowserRouter , Routes , Route , HashRouter} from "react-router-dom";
 
 function App() {
         return(
-            <>
+            <div className="App">
                 <HashRouter>
                     <Routes>
                         <Route exact path='/react-playground' element={<Home/>} />
@@ -15,7 +15,7 @@ function App() {
                         <Route exact path='/iwwywApp' element={<Appiwwyw/>}/>
                     </Routes>
                 </HashRouter>
-            </>
+            </div>
     )
 }       
 
