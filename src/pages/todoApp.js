@@ -52,7 +52,7 @@ function TodoApp(){
             
         </div>     
         </div>
-        <a href="/#/react-playground">home</a>
+        <a href="/react-playground">home</a>
       </div>
     );
 

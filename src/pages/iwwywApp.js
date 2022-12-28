@@ -10,7 +10,7 @@ function Appiwwyw(){
                     {input.length < 10 ? input : "you are gay"}
                 </h1>
             </div>
-            <a href="/#/react-playground">home</a>
+            <a href="/react-playground">home</a>
         </div>
     );
 }
