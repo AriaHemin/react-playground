@@ -5,12 +5,12 @@ function Home (){
             <p>check out my apps: </p>
             <ul>
                 <li>
-                    <a href="/todoApp">
+                    <a href="/#/todoApp">
                         todoApp
                     </a>
                 </li>
                 <li>
-                    <a href="/iwwywApp">
+                    <a href="/#/iwwywApp">
                         i write what you write app
                     </a>
                 </li>
