@@ -8,11 +8,11 @@ import {BrowserRouter , Routes , Route , HashRouter} from "react-router-dom";
 function App() {
         return(
             <div className="App">
-                <HashRouter>
+                <HashRouter basename='/' >
                     <Routes>
-                        <Route exact path='/#/react-playground' element={<Home/>} />
-                        <Route exact path='/#/todoApp' element={<TodoApp/>} />
-                        <Route exact path='/#/iwwywApp' element={<Appiwwyw/>}/>
+                        <Route exact path='/react-playground' element={<Home/>} />
+                        <Route exact path='/todoApp' element={<TodoApp/>} />
+                        <Route exact path='/iwwywApp' element={<Appiwwyw/>}/>
                     </Routes>
                 </HashRouter>
             </div>
