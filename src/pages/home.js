@@ -14,6 +14,16 @@ function Home (){
                         i write what you write app
                     </a>
                 </li>
+                <li>
+                    <a href="/thriftingOnline">
+                        thriftingOnline
+                    </a>
+                </li>
+                <li>
+                    <a href="/crazyBgChange">
+                        crazy background change
+                    </a>
+                </li>
             </ul>
 
         </div>
