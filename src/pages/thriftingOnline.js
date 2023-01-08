@@ -1,76 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ShopItemCard from "../components/shopItemCard";
+import {  useNavigate } from "react-router-dom";
 
 function ThriftingOnline(){
-    const [shopItems, setShopItems] = useState([
-        {
-            title: "vans",
-            img: "nice jacket",
-            condition: "9/10",
-            price: "15 000",
-            key: "1"
-
-        },
-        {
-            title: "addidas",
-            img: "nice shoe",
-            condition: "10/10",
-            price: "10 000",
-            key: "2"
-        },
-        {
-            title: "addidas",
-            img: "nice t shirt",
-            condition: "10/10",
-            price: "9 000",
-            key: "3"
-        },
-        {
-            title: "nike",
-            img: "nice socks",
-            condition: "",
-            price: "2 000",
-            key: "4"
-        },{
-            title: "converse hightop",
-            img: "nice shoes",
-            condition: "8/10",
-            price: "20 000",
-            key: "5"
-        },
-        {
-            title: "rolex",
-            img: "nice rolex watch",
-            condition: "10/10",
-            price: "60 000",
-            key: "6"
-        },{
-            title: "t shirt",
-            img: "supreme",
-            condition: "10/10",
-            price: "30 000",
-            key: "7"
-        },
-        {
-            title: "channel",
-            img: "nice bag",
-            condition: "9/10",
-            price: "10 000",
-            key: "8"
-        }
-    ]);
+    const navigate = useNavigate();
+    const [shopItemsArray, setShopItemsArray] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:8000/api/shopItems/')
+            .then((response) => response.json())
+            .then((data) => {
+                setShopItemsArray(data.shopItems)
+                /*console.log(typeof(shopItemsArray), shopItemsArray)
+                console.log(typeof(data), data)
+                console.log(typeof(data.shopItems), data.shopItems)*/
+            })
+    },[])
     return(
         <>
-            <div className="flex" >{
-                shopItems.map((shopItem)=>{return(
-                    <ShopItemCard 
-                        title={shopItem.title} 
-                        price={shopItem.price} 
-                        img={shopItem.img} 
-                        condition={shopItem.condition}
-                        key={shopItem.key} />
+            <div className="flex flex-wrap" >{
+                shopItemsArray.map((shopItem)=>{return(
+                    <button onClick={()=>{navigate("/shopItemsDetail/" + shopItem.id); }}
+                        key={shopItem.id}>
+                        <ShopItemCard 
+                            name={shopItem.name}
+                            brand={shopItem.brand}
+                            size={shopItem.size}
+                            width={shopItem.width}
+                            itemLength={shopItem.itemLength}
+                            condition={shopItem.condition}
+                            price={shopItem.price}
+
+                        />
+                    </button>
                 )})}
             </div>
+            <button onClick={()=>{navigate("/react-playground")}}>go home</button>
         </>
     );
 }

@@ -24,6 +24,16 @@ function Home (){
                         crazy background change
                     </a>
                 </li>
+                <li>
+                    <a href="/clickDog">
+                        click da dog
+                    </a>
+                </li>
+                <li>
+                    <a href="/searchYo">
+                        search Yo
+                    </a>
+                </li>
             </ul>
 
         </div>

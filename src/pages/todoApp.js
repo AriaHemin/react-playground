@@ -1,7 +1,9 @@
 import Task from "../components/taskComp"
 import { useState } from "react";
+import {  useNavigate } from "react-router-dom";
 
 function TodoApp(){
+    const navigate = useNavigate();
     const [taskTitle, setTitle] = useState()
 
     const [todos , setTodos] = useState([
@@ -52,7 +54,7 @@ function TodoApp(){
             
         </div>     
         </div>
-        <a href="/react-playground">home</a>
+        <button onClick={()=>{navigate("/react-playground")}}>go home</button>
       </div>
     );
 

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import {  useNavigate } from "react-router-dom";
 
 function Appiwwyw(){
     const [input, setInput] = useState("yo");
+    const navigate = useNavigate();
     return(
         <div className="flex align-center justify-center">
             <div className="flex align-center justify-center flex-col ">
@@ -10,7 +12,7 @@ function Appiwwyw(){
                     {input.length < 10 ? input : "you are gay"}
                 </h1>
             </div>
-            <a href="/react-playground">home</a>
+            <button onClick={()=>{navigate("/react-playground")}}>go home</button>
         </div>
     );
 }

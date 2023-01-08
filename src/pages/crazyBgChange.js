@@ -1,6 +1,8 @@
 import {  useEffect, useState } from "react";
+import {  useNavigate } from "react-router-dom";
 
 function CrazyBgChange(){
+    const navigate = useNavigate();
     const [count, setCount] = useState(0)
     const [color, setColor] = useState()
     useEffect(()=>{
@@ -16,6 +18,7 @@ function CrazyBgChange(){
                 <button className="py-1 px-3 m-2 rounded bg-white" onClick={()=>{setCount(count - 1); console.log(color) }}> - </button>
                 <button className="py-1 px-3 m-2 rounded bg-white" onClick={()=>{setCount(count + 1); console.log(color)}}> + </button>
             </div>
+            <button onClick={()=>{navigate("/react-playground")}}>go home</button>
         </div>
     )
 }

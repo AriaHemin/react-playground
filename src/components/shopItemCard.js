@@ -1,13 +1,18 @@
 function ShopItemCard(props){
     return(
-    <div className="w-300 h-450 m-2 bg-red-300 hover:w-350 hover:h-500">
-        <div>{props.img}</div>
-        <div className="flex flex-row p-1" >
-            <div className="m-1">{props.title}</div>
-            <div className="m-1">{props.price}</div>
-            <div className="m-1">{props.condition}</div>
-        </div>
-    </div>
+        <>
+            <div className="w-[200px] h-[300px] m-2 border-black border-solid border">
+                <div className="w-[198px] h-[198px] bg-black"> </div>
+                <div className="p-2 flex flex-col ">
+                    <div className="text-sm text-gray-600 " >{props.name}</div>
+                    <div className=" m-2  " >
+                        <div className="text-xs">{props.brand}</div>
+                        <div className="text-sm ">price : IQD{props.price}</div>
+                    </div>
+                </div>
+            </div>
+            
+        </>
     )
 }
 
